@@ -1,0 +1,69 @@
+.Star {
+    display: inline-block;
+    margin: 50px 0;
+    height: 0;
+    width: 0;
+    position: relative;
+    border-right: 50px solid transparent;
+    border-bottom: 35px solid yellow;
+    border-left: 50px solid transparent;
+    transform: rotate(35deg);
+}
+.Star:before,
+.Star:after {
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+}
+.Star:before {
+    top: -26px;
+    left: -32px;
+    border-bottom: 40px solid yellow;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    transform: rotate(-35deg);
+}
+.Star:after {
+    top: 2px;
+    left: -53px;
+    border-right: 50px solid transparent;
+    border-bottom: 35px solid yellow;
+    border-left: 50px solid transparent;
+    transform: rotate(-70deg);
+}
+
+.EmptyStar {
+    display: inline-block;
+    margin: 50px 0;
+    height: 0;
+    width: 0;
+    position: relative;
+    border-right: 50px solid transparent;
+    border-bottom: 35px solid gainsboro;
+    border-left: 50px solid transparent;
+    transform: rotate(35deg);
+}
+.EmptyStar:before,
+.EmptyStar:after {
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+}
+.EmptyStar:before {
+    top: -26px;
+    left: -32px;
+    border-bottom: 40px solid gainsboro;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    transform: rotate(-35deg);
+}
+.EmptyStar:after {
+    top: 2px;
+    left: -53px;
+    border-right: 50px solid transparent;
+    border-bottom: 35px solid gainsboro;
+    border-left: 50px solid transparent;
+    transform: rotate(-70deg);
+}

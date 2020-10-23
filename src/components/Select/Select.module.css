@@ -1,0 +1,32 @@
+import React, {useState} from "react";
+
+type ItemsType={
+    title:string
+    value:any
+}
+type SelectPropsType ={
+value: any
+onChange:()=>void
+items: ItemsType[]
+}
+
+function Select (props:SelectPropsType) {
+    let [active, setActive] = useState(true)
+    const selectItem = props.items.find(i=>i.value===props.value)
+
+  return (
+      <div>
+
+          <div className={}>{selectItem && selectItem.title}</div>
+
+          { active &&
+          <div >
+              <ul>
+                  {props.items.map((i, index)=> <li key={index}>{i.title}</li>)   }
+              </ul>
+          </div>}
+         </div>
+      );
+}
+
+export default Select;

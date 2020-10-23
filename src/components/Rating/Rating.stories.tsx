@@ -1,38 +1,29 @@
-import React from 'react';
+import React, {useState} from "react";
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/react/types-6-0';
-
-import { Button, ButtonProps } from './Button';
+import Rating, {RatingPropsType} from "./Rating";
+import {RatingValueType} from "../UncontrolledRating/UnControlledRating";
 
 export default {
-  title: 'Example/Button',
-  component: Button,
+  title: 'Rating stories',
+  component: Rating,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
 } as Meta;
 
-const Template: Story<ButtonProps> = (args) => <Button {...args} />;
+export const EmptyRating = () => <Rating value={0} onClick= {x=>x}/>
+export const Rating1 = () => <Rating value={1} onClick= {x=>x}/>
+export const Rating2 = () => <Rating value={2} onClick= {x=>x}/>
+export const Rating3 = () => <Rating value={3} onClick= {x=>x}/>
+export const Rating4 = () => <Rating value={4} onClick= {x=>x}/>
+export const Rating5 = () => <Rating value={5} onClick= {x=>x}/>
+export const RatingChange = () => {
+  const [ratinValue, setRatingValue] = useState<RatingValueType>(1)
+  return <Rating value={ratinValue} onClick= {setRatingValue}/>
+}
 
-export const Primary = Template.bind({});
-Primary.args = {
-  primary: true,
-  label: 'Button',
-};
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Button',
-};
 
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
-};
 
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
-};
+

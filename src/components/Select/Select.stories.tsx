@@ -1,24 +1,34 @@
 import React, {useState} from "react";
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Accordion from "./Accordion";
+import Select from "./Select";
+import {action} from "@storybook/addon-actions";
 
 export default {
-  title: 'Accordion',
-  component: Accordion,
+  title: 'Select',
+  component: Select,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
 } as Meta;
 
-export const AccordionCollapsed = () => <Accordion titleValue={"Menu"} collapsed={true} onClick= {x=>x}/>
-export const AccordionUncollapsed = () => <Accordion titleValue={"Songs"} collapsed={false} onClick= {x=>x}/>
-export const AccordionChanged = () => {
-  const [value, setValue] = useState<boolean>(true)
-  return <Accordion titleValue={"Menu"} collapsed={value} onClick= {setValue}/>
+const ItemCallBack = action("Item was clicked ")
+
+export const SelectWithValue = () => {
+  let [value, setValue] = useState("2")
+  return <div>
+    <Select onChange={setValue} value={value}
+            items={[{title: "Julia", value: "1"}, {title: "Serg", value: "2"}, {title: "Max", value: "3"}]}/>
+  </div>
 }
 
-
+export const SelectWithoutValue = () => {
+  let [value, setValue] = useState("2")
+  return <div>
+    <Select onChange={ItemCallBack}
+            items={[{title: "Julia", value: "1"}, {title: "Serg", value: "2"}, {title: "Max", value: "3"}]}/>
+  </div>
+}
 
 
 

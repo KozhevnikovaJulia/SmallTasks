@@ -5,7 +5,7 @@ import React, {useState} from "react";
 
 }
 
-export function UnControlledOnOff (props:onOffPropsType ) {
+export function UncontrolledOnOff (props:onOffPropsType ) {
     let [on,setOn] = useState(false)
     const onStyle = {
         width:"30px",

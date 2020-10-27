@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {RatingValueType} from "../UncontrolledRating/UnControlledRating";
+import {RatingValueType} from "../UncontrolledRating/UncontrolledRating";
 import style from "./Rating.module.css";
 
 export type RatingPropsType = {

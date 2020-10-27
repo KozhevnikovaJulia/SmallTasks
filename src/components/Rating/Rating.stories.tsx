@@ -2,7 +2,7 @@ import React, {useState} from "react";
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Rating, {RatingPropsType} from "./Rating";
-import {RatingValueType} from "../UncontrolledRating/UnControlledRating";
+import {RatingValueType} from "../UncontrolledRating/UncontrolledRating";
 
 export default {
   title: 'Rating stories',

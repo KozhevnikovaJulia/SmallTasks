@@ -6,7 +6,7 @@ type RatingPropsType = {
 }
 export type RatingValueType =  0 | 1 | 2 | 3 | 4 |5
 
-function UnControlledRating (props:RatingPropsType ) {
+function UncontrolledRating (props:RatingPropsType ) {
     let [value, setValue] = useState<RatingValueType>(1)
 
   return (
@@ -29,4 +29,4 @@ function Star(props: StarPropsType) {
     return <span onClick={() => {props.setValue()}}> {props.selected ? <b>Star</b> : "Star"}</span>
 }
 
-export default UnControlledRating;
+export default UncontrolledRating;

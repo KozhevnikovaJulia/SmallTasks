@@ -1,17 +1,17 @@
 import React, {useState} from "react";
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/react/types-6-0';
-import UnControlledAccordion from "./UnControlledAccordion";
+import UncontrolledAccordion from "./UncontrolledAccordion";
 
 export default {
-  title: 'UnControlledAccordion',
-  component: UnControlledAccordion,
+  title: 'UncontrolledAccordion',
+  component: UncontrolledAccordion,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
 } as Meta;
 
-export const UncontrolledAccordionChanged= () => <UnControlledAccordion titleValue={"Menu"} />
+export const UncontrolledAccordionChanged= () => <UncontrolledAccordion titleValue={"Menu"} />
 
 
 

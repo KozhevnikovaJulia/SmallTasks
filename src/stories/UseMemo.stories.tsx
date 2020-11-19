@@ -11,7 +11,7 @@ export default {
 
 
 
-const Counter = (props: {count:number}) => {
+export const Counter = (props: {count:number}) => {
   return <div > {props.count} </div>
 }
 

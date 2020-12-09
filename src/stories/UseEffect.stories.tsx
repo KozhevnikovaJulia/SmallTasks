@@ -55,3 +55,25 @@ export const CounterSetInterval= () => {
    Counter:  {counter}  
   </div>
 }
+
+export const TexttreckerExemple= () => {
+  const [text, setText] = useState ("")
+
+  console.log("Component render:" + text)
+ 
+  useEffect(() => {
+   const handler = (e: KeyboardEvent)=>{
+        console.log("e.key")
+        setText(text + e.key)   
+    }
+    window.addEventListener("keypress", handler)
+    
+    return ()=>{
+      window.removeEventListener("keypress", handler)
+    }   
+  }, [text])
+
+  return <div>
+   Typed text: {text}  
+  </div>
+}

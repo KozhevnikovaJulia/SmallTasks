@@ -1,6 +1,7 @@
 import React, {useState,  useEffect} from "react";
+import {AnalogClock} from "./AnalogClock";
 
-export function Clock (){
+export function Clock (props: {mode: "analog" | "digital"}){
    let [time, setTime] = useState(new Date())
 
   useEffect(() => {
@@ -11,16 +12,20 @@ export function Clock (){
       }   
   }, [])
 
-  // const stringTime = new Date().toLocaleTimeString()
-  const stringTime = time.toLocaleTimeString()
+  let view
 
-  return <div>
-    {/* {time.getHours()}
-    :
-    {time.getMinutes()}
-    :
-    {time.getSeconds()} */}
+  switch(props.mode) {
+    case 'analog':  
+    if (props.mode === 'analog')
+     view = <AnalogClock date={new Date()}/>
+    break
+  
+    case 'digital': 
+    default:
+     if (props.mode === 'digital')
+      // view = {stringTime}        
+      view = time.toLocaleTimeString()
+  }
 
-    {stringTime}
-  </div>  
+  return <div> {view}</div>  
 }
